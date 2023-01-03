@@ -1,3 +1,5 @@
+This is a no thrills experimentation for tools I use everyday.
+
 [live Site](https://delicate-hotteok-ba0f3a.netlify.app)
 
 # Want to Contribute?
