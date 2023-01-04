@@ -1,5 +1,6 @@
 <script>
 	let value = '';
+	let num = '';
 	const re = new RegExp(/#/g);
 	function format() {
 		console.log(value);
@@ -14,6 +15,18 @@
 	}
 	function clear() {
 		value = '';
+	}
+
+	function hexify() {
+		let str = num;
+		str = str.replaceAll(/\s+/g, '');
+		let r = [];
+		for (let i = 0; i < str.length - 1; i += 2) {
+			r.push(String.fromCharCode(parseInt(str.charAt(i) + str.charAt(i + 1), 16)));
+		}
+		//oreturn r.join('');
+		console.log(num);
+		num = r.join('');
 	}
 </script>
 
@@ -36,6 +49,19 @@
 				>
 			</p>
 			<p class="copied" />
+		</fieldset>
+	</form>
+	<form>
+		<fieldset>
+			<legend>Hex to ASCII String</legend>
+			<textarea
+				name="hex-conversion"
+				rows="5"
+				cols="100"
+				bind:value={num}
+				placeholder="Paste Hexdecimal to be converted"
+			/>
+			<p><button class="format-btn" on:click={hexify}>Convert</button></p>
 		</fieldset>
 	</form>
 </main>
