@@ -17,27 +17,83 @@
 	}
 </script>
 
-<h1>W-Tools</h1>
-<form>
-	<fieldset>
-		<legend>Format</legend>
-		<textarea name="textarea" rows="50" cols="100" bind:value placeholder="Format Log Here" />
-		<p>
-			<button class="format-btn" on:click={format}>Format</button><button
-				class="clear-btn"
-				on:click={clear}>Clear</button
-			>
-		</p>
-		<p class="copied" />
-	</fieldset>
-</form>
+<main>
+	<h1>W-Tools</h1>
+	<form>
+		<fieldset>
+			<legend>Format Your Log</legend>
+			<textarea
+				name="textarea"
+				rows="50"
+				cols="100"
+				bind:value
+				placeholder="Paste the log to be formatted here..."
+			/>
+			<p>
+				<button class="format-btn" on:click={format}>Format</button><button
+					class="clear-btn"
+					on:click={clear}>Clear</button
+				>
+			</p>
+			<p class="copied" />
+		</fieldset>
+	</form>
+</main>
 
 <style>
+	/* https://coolors.co/palette/8ecae6-219ebc-023047-ffb703-fb8500 */
+	@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 	.copied {
 		font-weight: bold;
 	}
 
+	h1 {
+		font-family: 'Oswald', sans-serif;
+	}
 	.format-btn {
+		font-family: 'Oswald', sans-serif;
 		margin-right: 10px;
+		background-color: #023047;
+		color: white;
+		height: 35px;
+		width: 65px;
+		border-radius: 5px;
+		border-style: none;
+	}
+	.format-btn:hover {
+		background-color: #fb8500;
+		cursor: pointer;
+	}
+	.clear-btn {
+		font-family: 'Oswald', sans-serif;
+		margin-right: 10px;
+		background-color: #023047;
+		color: white;
+		height: 35px;
+		width: 65px;
+		border-radius: 5px;
+		border-style: none;
+	}
+	.clear-btn:hover {
+		background-color: #fb8500;
+		cursor: pointer;
+	}
+	fieldset {
+		font-family: 'Oswald', sans-serif;
+		font-size: 20px;
+		font-weight: bold;
+		background-color: #219ebc;
+		border-radius: 10px;
+		border-style: none;
+	}
+	textarea {
+		border-radius: 10px;
+		padding-left: 10px;
+		padding-top: 5px;
+		border: 2px solid #023047;
+	}
+	textarea:focus {
+		outline: none !important;
+		border: 2px solid #fb8500;
 	}
 </style>
