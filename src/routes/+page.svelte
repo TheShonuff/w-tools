@@ -38,8 +38,8 @@
 				<legend>Format Your Log</legend>
 				<textarea
 					name="textarea"
-					rows="40"
-					cols="100"
+					rows="25"
+					cols="75"
 					bind:value
 					placeholder="Paste the log to be formatted here..."
 				/>
@@ -58,7 +58,7 @@
 				<textarea
 					name="hex-conversion"
 					rows="5"
-					cols="100"
+					cols="50"
 					bind:value={num}
 					placeholder="Paste Hexdecimal to be converted"
 				/>
@@ -85,8 +85,6 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
-		height: 100vh;
-		width: 100vw;
 		margin: 0 auto;
 	}
 	.btn {
@@ -100,7 +98,8 @@
 		border-style: none;
 	}
 	.btn:hover {
-		background-color: #fb8500;
+		background-color: white;
+		color: black;
 		cursor: pointer;
 	}
 	fieldset {
@@ -110,7 +109,6 @@
 		background-color: #219ebc;
 		border-radius: 10px;
 		border-style: none;
-		width: 50%;
 	}
 	textarea {
 		border-radius: 10px;
