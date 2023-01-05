@@ -32,38 +32,40 @@
 
 <main>
 	<h1>W-Tools</h1>
-	<form>
-		<fieldset>
-			<legend>Format Your Log</legend>
-			<textarea
-				name="textarea"
-				rows="50"
-				cols="100"
-				bind:value
-				placeholder="Paste the log to be formatted here..."
-			/>
-			<p>
-				<button class="format-btn" on:click={format}>Format</button><button
-					class="clear-btn"
-					on:click={clear}>Clear</button
-				>
-			</p>
-			<p class="copied" />
-		</fieldset>
-	</form>
-	<form>
-		<fieldset>
-			<legend>Hex to ASCII String</legend>
-			<textarea
-				name="hex-conversion"
-				rows="5"
-				cols="100"
-				bind:value={num}
-				placeholder="Paste Hexdecimal to be converted"
-			/>
-			<p><button class="format-btn" on:click={hexify}>Convert</button></p>
-		</fieldset>
-	</form>
+	<div class="container">
+		<form>
+			<fieldset>
+				<legend>Format Your Log</legend>
+				<textarea
+					name="textarea"
+					rows="40"
+					cols="100"
+					bind:value
+					placeholder="Paste the log to be formatted here..."
+				/>
+				<p>
+					<button class="btn format-btn" on:click={format}>Format</button><button
+						class=" btn clear-btn"
+						on:click={clear}>Clear</button
+					>
+				</p>
+				<p class="copied" />
+			</fieldset>
+		</form>
+		<form>
+			<fieldset>
+				<legend>Hex to ASCII String</legend>
+				<textarea
+					name="hex-conversion"
+					rows="5"
+					cols="100"
+					bind:value={num}
+					placeholder="Paste Hexdecimal to be converted"
+				/>
+				<p><button class="btn format-btn" on:click={hexify}>Convert</button></p>
+			</fieldset>
+		</form>
+	</div>
 </main>
 
 <style>
@@ -76,7 +78,18 @@
 	h1 {
 		font-family: 'Oswald', sans-serif;
 	}
-	.format-btn {
+	:global(body) {
+		background-color: #e7ecef;
+	}
+	.container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		height: 100vh;
+		width: 100vw;
+		margin: 0 auto;
+	}
+	.btn {
 		font-family: 'Oswald', sans-serif;
 		margin-right: 10px;
 		background-color: #023047;
@@ -86,21 +99,7 @@
 		border-radius: 5px;
 		border-style: none;
 	}
-	.format-btn:hover {
-		background-color: #fb8500;
-		cursor: pointer;
-	}
-	.clear-btn {
-		font-family: 'Oswald', sans-serif;
-		margin-right: 10px;
-		background-color: #023047;
-		color: white;
-		height: 35px;
-		width: 65px;
-		border-radius: 5px;
-		border-style: none;
-	}
-	.clear-btn:hover {
+	.btn:hover {
 		background-color: #fb8500;
 		cursor: pointer;
 	}
@@ -111,6 +110,7 @@
 		background-color: #219ebc;
 		border-radius: 10px;
 		border-style: none;
+		width: 50%;
 	}
 	textarea {
 		border-radius: 10px;
