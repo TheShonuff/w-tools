@@ -85,6 +85,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
+		width: 1000px;
 		margin: 0 auto;
 	}
 	.btn {
@@ -114,6 +115,8 @@
 		border-radius: 10px;
 		padding-left: 10px;
 		padding-top: 5px;
+		max-width: 800px;
+		min-width: 400px;
 		border: 2px solid #023047;
 	}
 	textarea:focus {
